@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+// Example function to be used with function pointers
+void printMessage(const char *message) {
+printf("Message: %s\n", message);
+}
+
+// Function that takes a function pointer as an argument and calls it
+void callFunction(void (*func)(const char *), const char *message) {
+// Call the function through the pointer
+func(message);
+}
+
+int main() {
+// Declare a function pointer for the printMessage function
+void (*messagePrinter)(const char *);
+
+```
+// Assign the address of the printMessage function to the pointer
+messagePrinter = printMessage;
+
+// Call the function through the pointer
+messagePrinter("Hello, Function Pointer!");
+
+// Call the function using another function that takes a function pointer
+callFunction(printMessage, "Function Pointer as an Argument");
+
+return 0;
+
+```
+
+}

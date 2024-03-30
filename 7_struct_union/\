@@ -1,0 +1,38 @@
+//self referential structures
+#include <stdio.h>
+
+// Define a structure called Node
+struct Node {
+    int data;          // Data part of the node
+    struct Node *next; // Pointer to the next Node
+};
+
+int main() {
+    // Create two nodes
+    struct Node firstNode;
+    printf("address of firstnode: %p\n",firstNode);
+    printf("first node.data=%d",firstNode.data);
+    printf("first node-next=%d",firstNode->next);
+
+
+    struct Node secondNode;
+
+    // Assign data to the nodes
+    firstNode.data = 10;
+    secondNode.data = 20;
+
+    // Link the nodes together
+    firstNode.next = &secondNode;
+    secondNode.next = NULL;
+
+    // Access data and next pointer of the first node
+    printf("Data in the first node: %d\n", firstNode.data);
+    printf("Next pointer of the first node: %p\n", (void *)firstNode.next);
+
+    // Access data and next pointer of the second node
+    printf("Data in the second node: %d\n", secondNode.data);
+    printf("Next pointer of the second node: %p\n", (void *)secondNode.next);
+
+    return 0;
+}
+
