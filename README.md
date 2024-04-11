@@ -39,9 +39,10 @@ C learner tailung
 
 
 
+here is some collection for basics
 
 
-
+https://drive.google.com/drive/folders/1o3zbXNFaqEY0UNb_ZuOUbZImn3mhrDV3
 
 
 
